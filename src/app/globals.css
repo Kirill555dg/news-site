@@ -1,5 +1,4 @@
 :root {
-  /* Основные цвета модалки */
   --modal-bg: #fff;
   --modal-overlay: rgba(0, 0, 0, 0.5);
   --modal-border: #e2e8f0;
@@ -7,11 +6,16 @@
   --modal-primary: #4299e1;
   --modal-secondary: #718096;
 
-  /* Цвета кнопки закрытия */
   --close-btn-bg: #f1f5f9;
   --close-btn-hover: #e2e8f0;
   --close-btn-active: #cbd5e1;
   --close-icon: #64748b;
+
+  --card-bg: #fff;
+  --primary-color: #2563eb;
+  --secondary-color: #718096;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,10 +24,16 @@
     --modal-overlay: rgba(0, 0, 0, 0.7);
     --modal-border: #2d3748;
     --modal-text: #cbd5e0;
+
     --close-btn-bg: #2d3748;
     --close-btn-hover: #4a5568;
     --close-btn-active: #718096;
     --close-icon: #a0aec0;
+    --card-bg: #1a202c;
+    --primary-color: #4299e1;
+    --secondary-color: #a0aec0;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
     --card-bg: #1a202c;
     --primary-color: #4299e1;
     --secondary-color: #a0aec0;
