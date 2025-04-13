@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { use } from "react";
 
-export const dynamicParams = false;
+export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   const news = await import("@/data/news.json");
