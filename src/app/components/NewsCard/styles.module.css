@@ -1,0 +1,97 @@
+:root {
+  --card-bg: #fff;
+  --primary-color: #2563eb;
+  --secondary-color: #718096;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.6s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--primary-color);
+}
+
+/* Декоративная полоска для типа новости */
+.type {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.type::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* Анимации */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card::before {
+  background: linear-gradient(
+    45deg,
+    transparent 25%,
+    rgba(0, 0, 0, 0.08) 50%,
+    /* Темнее для светлой темы */ transparent 75%
+  );
+  animation: metalFlow 2s linear; /* Убрано infinite */
+}
+
+.card:hover::before {
+  animation: metalFlow 2s linear forwards; /* Запуск только при наведении */
+}
+
+@keyframes metalFlow {
+  to {
+    transform: translate(50%, 50%) rotate(45deg);
+  }
+}
+
+/* Для темной темы */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #1a202c;
+    --primary-color: #4299e1;
+    --secondary-color: #a0aec0;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.title {
+  font-size: 1.1rem;
+  margin: 0 0 12px 0;
+  color: var(--primary-color);
+  line-height: 1.4;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+  margin: 0;
+}

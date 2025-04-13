@@ -1,12 +1,33 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Основные цвета модалки */
+  --modal-bg: #fff;
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+  --modal-border: #e2e8f0;
+  --modal-text: #4a5568;
+  --modal-primary: #4299e1;
+  --modal-secondary: #718096;
+
+  /* Цвета кнопки закрытия */
+  --close-btn-bg: #f1f5f9;
+  --close-btn-hover: #e2e8f0;
+  --close-btn-active: #cbd5e1;
+  --close-icon: #64748b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --modal-bg: #1a202c;
+    --modal-overlay: rgba(0, 0, 0, 0.7);
+    --modal-border: #2d3748;
+    --modal-text: #cbd5e0;
+    --close-btn-bg: #2d3748;
+    --close-btn-hover: #4a5568;
+    --close-btn-active: #718096;
+    --close-icon: #a0aec0;
+    --card-bg: #1a202c;
+    --primary-color: #4299e1;
+    --secondary-color: #a0aec0;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -22,6 +43,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+body.locked {
+  position: fixed;
+  width: 100%;
+  top: -var(--scroll-offset, 0px);
+  overflow-y: scroll !important;
 }
 
 * {
